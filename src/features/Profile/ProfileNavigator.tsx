@@ -1,16 +1,15 @@
 import React, { FC } from 'react'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
-import { ProductsList, ProductDetails } from './screens'
+import { ProfileInformation } from './screens'
 
 const { Navigator, Screen } = createNativeStackNavigator()
 
-const ProductNavigator: FC = () => {
+const ProfileNavigator: FC = () => {
   return (
     <Navigator screenOptions={{ headerShown: false }}>
-      <Screen name="ProductsList" component={ProductsList} />
-      <Screen name="ProductsDetails" component={ProductDetails} />
+      <Screen name="ProfileInformation" component={ProfileInformation} />
     </Navigator>
   )
 }
 
-export default ProductNavigator
+export default ProfileNavigator
