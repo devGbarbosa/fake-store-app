@@ -4,13 +4,18 @@ import { useSelector } from 'react-redux'
 import { useDispatch } from 'react-redux'
 import { RootState } from '../../../../redux-store/rootReducer'
 import List from '../../components/List'
+import { getProducts } from '../../store/api'
 import { saveProducts } from '../../store/slice/productSlice'
 
 const ProductsList: FC = () => {
   const dispatch = useDispatch()
 
   useEffect(() => {
-    dispatch(saveProducts({ savedProducts: ['pencil','ball', 'pen', 'box'] }))
+    getProducts().then((products) =>
+      dispatch(
+        saveProducts({ savedProducts: products }),
+      ),
+    )
   }, [])
 
   const { savedProducts } = useSelector((state: RootState) => state.products)

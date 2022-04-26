@@ -1,15 +1,16 @@
 import React, { FC } from 'react'
 import { Text, View } from 'react-native'
+import { ProductBody } from '../../types'
 
 interface Props {
-  item: string
+  item: ProductBody
   index: number
 }
 
 const Item: FC<Props> = ({ item }) => {
   return (
     <View>
-      <Text>{item}</Text>
+      <Text>{item.title}</Text>
     </View>
   )
 }

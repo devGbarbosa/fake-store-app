@@ -1,5 +1,7 @@
+import { ProductBody } from "../../../types"
+
 interface ProductState {
-  savedProducts: string[]
+  savedProducts: ProductBody[]
 }
 
 const initialState = { savedProducts: [] } as ProductState
