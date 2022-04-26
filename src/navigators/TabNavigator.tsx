@@ -1,5 +1,4 @@
 import React, { FC } from 'react'
-import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import ProductNavigator from '../features/Products/ProductNavigator'
 import ProfileNavigator from '../features/Profile/ProfileNavigator'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'

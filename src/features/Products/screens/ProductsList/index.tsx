@@ -3,6 +3,7 @@ import { View, Text } from 'react-native'
 import { useSelector } from 'react-redux'
 import { useDispatch } from 'react-redux'
 import { RootState } from '../../../../redux-store/rootReducer'
+import List from '../../components/List'
 import { saveProducts } from '../../store/slice/productSlice'
 
 const ProductsList: FC = () => {
@@ -16,11 +17,7 @@ const ProductsList: FC = () => {
 
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      {savedProducts.map((item) => (
-        <View>
-          <Text>{item}</Text>
-        </View>
-      ))}
+      <List savedProducts={savedProducts} />
     </View>
   )
 }
