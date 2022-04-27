@@ -1,6 +1,7 @@
 import { RouteProp, useNavigation, useRoute } from '@react-navigation/native'
 import React, { FC, useEffect } from 'react'
 import { View, Text, TouchableOpacity, ActivityIndicator } from 'react-native'
+import Container from '../../../../Layout/Container'
 import { ProductNavigatorParamList } from '../../ProductNavigator'
 import useStoreData from './useStoreData'
 
@@ -21,13 +22,13 @@ const ProductDetails: FC = () => {
   }
 
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+    <Container flex={1} justifyContent={'center'} alignItems={'center'}>
       {!product.id ? <ActivityIndicator size={40} /> : <Text>{product.title}</Text>}
 
       <TouchableOpacity onPress={handleGoBack}>
         <Text>Back to list</Text>
       </TouchableOpacity>
-    </View>
+    </Container>
   )
 }
 
