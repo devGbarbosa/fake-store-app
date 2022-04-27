@@ -2,10 +2,15 @@ import React, { FC } from 'react'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { ProductsList, ProductDetails } from './screens'
 
-const { Navigator, Screen } = createNativeStackNavigator<{
+export type ProductNavigatorParamList = {
   ProductsList: undefined
-  ProductsDetails: { id: string }
-}>()
+  ProductsDetails: {
+    id: string
+  }
+}
+
+const { Navigator, Screen } =
+  createNativeStackNavigator<ProductNavigatorParamList>()
 
 const ProductNavigator: FC = () => {
   return (

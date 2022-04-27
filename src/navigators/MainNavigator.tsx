@@ -1,8 +1,12 @@
 import React, { FC } from 'react'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
-import TabNavigator from './TabNavigator'
+import TabNavigator, { TabNavigatorParamList } from './TabNavigator'
 
-const { Navigator, Screen } = createNativeStackNavigator()
+export type MainNavigatorParamList = {
+  TabNavigator: TabNavigatorParamList
+}
+
+const { Navigator, Screen } = createNativeStackNavigator<MainNavigatorParamList>()
 
 const MainNavigator: FC = () => {
   return (

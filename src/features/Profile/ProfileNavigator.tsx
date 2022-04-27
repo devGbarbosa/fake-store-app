@@ -2,7 +2,12 @@ import React, { FC } from 'react'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { ProfileInformation } from './screens'
 
-const { Navigator, Screen } = createNativeStackNavigator()
+export type ProfileNavigatorParamList = {
+  ProfileInformation: undefined
+}
+
+const { Navigator, Screen } =
+  createNativeStackNavigator<ProfileNavigatorParamList>()
 
 const ProfileNavigator: FC = () => {
   return (

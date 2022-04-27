@@ -1,6 +1,7 @@
-import { useNavigation, useRoute } from '@react-navigation/native'
+import { RouteProp, useNavigation, useRoute } from '@react-navigation/native'
 import React, { FC, useEffect } from 'react'
 import { View, Text, TouchableOpacity } from 'react-native'
+import { ProductNavigatorParamList } from '../../ProductNavigator'
 import useStoreData from './useStoreData'
 
 const ProductDetails: FC = () => {
@@ -8,7 +9,7 @@ const ProductDetails: FC = () => {
 
   const { goBack } = useNavigation()
 
-  const { params } = useRoute()
+  const { params } = useRoute<RouteProp<ProductNavigatorParamList>>()
 
   useEffect(() => {
     loadProduct(params?.id!)
