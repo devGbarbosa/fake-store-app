@@ -1,6 +1,9 @@
+import { API } from '../../../../config/api'
 import { ApiFetch } from '../../../../utils/Fetch'
 
+const baseUrl = API.URL
+
 export const getProducts = async () => {
-  const results = (await ApiFetch.get(`https://fakestoreapi.com/products?limit=5`)).data
+  const results = (await ApiFetch.get(`${baseUrl}/products?limit=5`)).data
   return results
 }

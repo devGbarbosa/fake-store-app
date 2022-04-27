@@ -8,8 +8,8 @@ const { Navigator, Screen } = createBottomTabNavigator()
 const TabNavigator: FC = () => {
   return (
     <Navigator screenOptions={{ headerShown: false }}>
-      <Screen name="ProductNavigator" component={ProductNavigator} />
-      <Screen name="ProfileNavigator" component={ProfileNavigator} />
+      <Screen name="Products" component={ProductNavigator} />
+      <Screen name="Profile" component={ProfileNavigator} />
     </Navigator>
   )
 }

@@ -1,7 +1,8 @@
 import axios from 'axios'
+import { API } from '../config/api'
 
 const ApiFetch = axios.create({
-  baseURL: 'https://fakestoreapi.com/',
+  baseURL: API.URL,
   timeout: 10000,
 })
 

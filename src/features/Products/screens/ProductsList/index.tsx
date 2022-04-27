@@ -7,7 +7,6 @@ const ProductsList: FC = () => {
   const { loadProducts, savedProducts } = useStoreData()
 
   useEffect(() => {
-    console.log('aqui 2')
     loadProducts()
   }, [])
 
