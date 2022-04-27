@@ -6,9 +6,10 @@ import Item from '../Item'
 
 interface Props {
   savedProducts: ProductBody[]
+  viewProduct: (id: string) => void
 }
 
-const List: FC<Props> = ({ savedProducts }) => {
+const List: FC<Props> = ({ savedProducts, viewProduct }) => {
   const keyExtractor = (item: ProductBody, index: number) =>
     `${item.category}+${index}`
 
@@ -16,7 +17,7 @@ const List: FC<Props> = ({ savedProducts }) => {
     <FlatList
       data={savedProducts}
       contentContainerStyle={{ flexGrow: 1, justifyContent: 'center' }}
-      renderItem={Item}
+      renderItem={({item, index}) => <Item item={item} index={index} viewProduct={viewProduct} />}
       keyExtractor={keyExtractor}
       ItemSeparatorComponent={() => <View style={{ marginVertical: 8 }} />}
       ListEmptyComponent={EmptyPlaceholder}

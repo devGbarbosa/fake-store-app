@@ -1,10 +1,30 @@
-import React, { FC } from 'react'
-import { View, Text } from 'react-native'
+import { useNavigation, useRoute } from '@react-navigation/native'
+import React, { FC, useEffect } from 'react'
+import { View, Text, TouchableOpacity } from 'react-native'
+import useStoreData from './useStoreData'
 
-const ProductDetails: FC = () => (
-  <View>
-    <Text>Hello! This is the products details</Text>
-  </View>
-)
+const ProductDetails: FC = () => {
+  const { loadProduct, product } = useStoreData()
+
+  const { goBack } = useNavigation()
+
+  const { params } = useRoute()
+
+  useEffect(() => {
+    loadProduct(params?.id!)
+  })
+
+  return (
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <Text>Produto aqui</Text>
+
+      <Text>{product.title}</Text>
+
+      <TouchableOpacity onPress={goBack}>
+        <Text>Back to list</Text>
+      </TouchableOpacity>
+    </View>
+  )
+}
 
 export default ProductDetails

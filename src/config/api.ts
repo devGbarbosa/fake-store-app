@@ -1,3 +1,3 @@
 export const API = {
-    URL: process.env.API_URL
+    URL: 'https://fakestoreapi.com'
 }

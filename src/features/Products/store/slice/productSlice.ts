@@ -12,9 +12,15 @@ const productSlice = createSlice({
     ): void => {
       state.savedProducts = action.payload.savedProducts
     },
+    saveProduct: (
+      state,
+      action: PayloadAction<{ product: ProductBody }>,
+    ): void => {
+      state.product = action.payload.product
+    },
   },
 })
 
-export const { saveProducts } = productSlice.actions
+export const { saveProducts, saveProduct } = productSlice.actions
 
 export default productSlice.reducer
