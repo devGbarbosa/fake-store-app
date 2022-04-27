@@ -1,6 +1,8 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { createAction, createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { ProductBody } from '../../types'
 import initialState from './initialState'
+
+export const resetProductState = createAction<void>('resetProductState')
 
 const productSlice = createSlice({
   name: 'products',
@@ -18,6 +20,11 @@ const productSlice = createSlice({
     ): void => {
       state.product = action.payload.product
     },
+  },
+  extraReducers: (builder) => {
+    builder.addCase(resetProductState, (state, _) => {
+      state.product = initialState.product
+    })
   },
 })
 

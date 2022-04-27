@@ -1,11 +1,11 @@
 import { RouteProp, useNavigation, useRoute } from '@react-navigation/native'
 import React, { FC, useEffect } from 'react'
-import { View, Text, TouchableOpacity } from 'react-native'
+import { View, Text, TouchableOpacity, ActivityIndicator } from 'react-native'
 import { ProductNavigatorParamList } from '../../ProductNavigator'
 import useStoreData from './useStoreData'
 
 const ProductDetails: FC = () => {
-  const { loadProduct, product } = useStoreData()
+  const { loadProduct, product, clearProduct } = useStoreData()
 
   const { goBack } = useNavigation()
 
@@ -13,15 +13,18 @@ const ProductDetails: FC = () => {
 
   useEffect(() => {
     loadProduct(params?.id!)
-  })
+  }, [])
+
+  const handleGoBack = () => {
+    goBack()
+    clearProduct()
+  }
 
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Produto aqui</Text>
+      {!product.id ? <ActivityIndicator size={40} /> : <Text>{product.title}</Text>}
 
-      <Text>{product.title}</Text>
-
-      <TouchableOpacity onPress={goBack}>
+      <TouchableOpacity onPress={handleGoBack}>
         <Text>Back to list</Text>
       </TouchableOpacity>
     </View>
