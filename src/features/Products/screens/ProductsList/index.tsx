@@ -1,21 +1,15 @@
-import { AnyAction } from '@reduxjs/toolkit'
-import React, { Dispatch, FC, useEffect } from 'react'
-import { View, Text } from 'react-native'
-import { useDispatch } from 'react-redux'
-import { useSelector } from 'react-redux'
-import { AppDispatch, AppThunk } from '../../../../redux-store'
-import { RootState } from '../../../../redux-store/rootReducer'
+import React, { FC, useEffect } from 'react'
+import { View } from 'react-native'
 import List from '../../components/List'
-import { loadProducts } from '../../store/thunks/productsThunk'
+import useStoreData from './useStoreData'
 
 const ProductsList: FC = () => {
-  const dispatch = useDispatch<AppDispatch>()
+  const { loadProducts, savedProducts } = useStoreData()
 
   useEffect(() => {
-    dispatch(loadProducts())
+    console.log('aqui 2')
+    loadProducts()
   }, [])
-
-  const { savedProducts } = useSelector((state: RootState) => state.products)
 
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>

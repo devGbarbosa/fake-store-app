@@ -3,7 +3,7 @@ import { ProductBody } from '../../types'
 import { getProducts } from '../api'
 import { saveProducts } from '../slice/productSlice'
 
-export const loadProducts = createAsyncThunk<void, void>(
+export const loadProductsThunk = createAsyncThunk<void, void>(
   'products/saveProducts',
   async (_, { dispatch }) => {
     const products: ProductBody[] = await getProducts()
