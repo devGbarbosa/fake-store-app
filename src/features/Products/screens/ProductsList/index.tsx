@@ -1,21 +1,18 @@
-import React, { FC, useEffect } from 'react'
+import { AnyAction } from '@reduxjs/toolkit'
+import React, { Dispatch, FC, useEffect } from 'react'
 import { View, Text } from 'react-native'
-import { useSelector } from 'react-redux'
 import { useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux'
+import { AppDispatch, AppThunk } from '../../../../redux-store'
 import { RootState } from '../../../../redux-store/rootReducer'
 import List from '../../components/List'
-import { getProducts } from '../../store/api'
-import { saveProducts } from '../../store/slice/productSlice'
+import { loadProducts } from '../../store/thunks/productsThunk'
 
 const ProductsList: FC = () => {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch<AppDispatch>()
 
   useEffect(() => {
-    getProducts().then((products) =>
-      dispatch(
-        saveProducts({ savedProducts: products }),
-      ),
-    )
+    dispatch(loadProducts())
   }, [])
 
   const { savedProducts } = useSelector((state: RootState) => state.products)
