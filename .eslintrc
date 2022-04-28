@@ -8,5 +8,8 @@
       "no-use-before-define": "off",
       "react/jsx-filename-extension": "off",
       "react/prop-types": "off"
+    },
+    "globals": {
+      "__DEV__": true
     }
 }

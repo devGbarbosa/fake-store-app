@@ -7,9 +7,12 @@ interface Props {
   productProps: ProductBody
 }
 
-const Card: FC<Props> = ({ productProps: { image, title, category, price } }) => {
+const Card: FC<Props> = ({
+  productProps: { image, title, category, price },
+}) => {
   return (
     <Container
+      testID={'CardComponent'}
       justifyContent={'space-around'}
       alignItems={'center'}
       borderWidth={1}
