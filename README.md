@@ -1,2 +1,8 @@
 # fake store app
-A product's list app, to practice Redux Toolkit 
+A product list app with fake products,
+
+## Goals 
+ - Practice and explore Redux Toolkit;
+ - Try API calls using Axios;
+ - Apply knowledges about styled systems;
+ - Try redux thunk, for async calls and dispatch results to action;
