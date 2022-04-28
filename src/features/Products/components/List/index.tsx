@@ -10,14 +10,16 @@ interface Props {
 }
 
 const List: FC<Props> = ({ savedProducts, viewProduct }) => {
-  const keyExtractor = (item: ProductBody, index: number) =>
-    `${item.category}+${index}`
+  const keyExtractor = (item: ProductBody) => `${item.id}`
 
   return (
     <FlatList
       data={savedProducts}
       contentContainerStyle={{ flexGrow: 1, justifyContent: 'center' }}
-      renderItem={({item, index}) => <Item item={item} index={index} viewProduct={viewProduct} />}
+      renderItem={({ item, index }) => (
+        <Item item={item} index={index} viewProduct={viewProduct} />
+      )}
+      showsVerticalScrollIndicator={false}
       keyExtractor={keyExtractor}
       ItemSeparatorComponent={() => <View style={{ marginVertical: 8 }} />}
       ListEmptyComponent={EmptyPlaceholder}

@@ -1,7 +1,7 @@
-import { useNavigation } from '@react-navigation/native'
 import React, { FC } from 'react'
-import { Text, TouchableOpacity, View } from 'react-native'
+import { TouchableOpacity, View } from 'react-native'
 import { ProductBody } from '../../types'
+import Card from '../Card'
 
 interface Props {
   item: ProductBody
@@ -13,7 +13,7 @@ const Item: FC<Props> = ({ item, viewProduct }) => {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
       <TouchableOpacity onPress={() => viewProduct(item.id)}>
-        <Text>{item.title}</Text>
+        <Card productProps={item} />
       </TouchableOpacity>
     </View>
   )
