@@ -9,7 +9,7 @@ import {
   SpaceProps,
   space,
   LayoutProps,
-  layout
+  layout,
 } from 'styled-system'
 
 interface Props
@@ -17,9 +17,7 @@ interface Props
     BorderProps,
     ColorProps,
     SpaceProps,
-    LayoutProps {
-  children: React.ReactNode
-}
+    LayoutProps {}
 
 const Container = styled.View<Props>`
   ${flexbox}

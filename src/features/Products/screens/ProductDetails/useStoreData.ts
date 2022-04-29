@@ -11,7 +11,7 @@ interface Data {
   product: ProductBody
 }
 
-const useStoreData = (): Data => {
+export const useStoreData = (): Data => {
   const dispatch = useDispatch<AppDispatch>()
 
   const { product } = useSelector((state: RootState) => state.products)
@@ -22,5 +22,3 @@ const useStoreData = (): Data => {
     product,
   }
 }
-
-export default useStoreData
