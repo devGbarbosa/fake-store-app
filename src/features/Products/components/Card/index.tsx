@@ -24,9 +24,9 @@ const Card: FC<Props> = ({
       <Image style={{ width: 100, height: 100 }} source={{ uri: image }} />
 
       <Container alignItems={'center'}>
-        <Text>{title}</Text>
-        <Text>{category}</Text>
-        <Text>$ {price}</Text>
+        <Text testID={'TitleLabel'}>{title}</Text>
+        <Text testID={'CategoryLabel'}>{category}</Text>
+        <Text testID={'PriceLabel'}>$ {price}</Text>
       </Container>
     </Container>
   )

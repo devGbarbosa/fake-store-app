@@ -1,24 +1,28 @@
-import { render, waitFor } from '@testing-library/react-native'
+import { render } from '@testing-library/react-native'
 import React from 'react'
 import Card from '../components/Card'
 
-test('should show some informations on cards', async () => {
-  const { queryByTestId } = render(
-    <Card
-      productProps={{
-        id: '1',
-        title: 'Teste',
-        category: 'Teste',
-        image: 'Teste',
-        price: 'Teste',
-        description: 'Teste',
-      }}
-    />,
-  )
+describe('ProductList', () => {
+  test("should show a product's title on card", async () => {
+    const { getByTestId } = render(
+      <Card
+        productProps={{
+          id: '1',
+          title: 'Test',
+          category: 'Test',
+          image: 'Test',
+          price: 'Test',
+          description: 'Test',
+        }}
+      />,
+    )
 
-  const cardExample = queryByTestId('CardComponent')
+    const titleLabel = getByTestId('TitleLabel')
+    const priceLabel = getByTestId('PriceLabel')
+    const categoryLabel = getByTestId('CategoryLabel')
 
-  await waitFor(() => expect(queryByTestId('CardComponent')).toBeTruthy())
-
-  expect(cardExample).toBeTruthy()
+    expect(titleLabel.props.children).toBe('Test')
+    expect(categoryLabel.props.children).toBe('Test')
+    expect(priceLabel.props.children).toStrictEqual(['$ ', 'Test'])
+  })
 })

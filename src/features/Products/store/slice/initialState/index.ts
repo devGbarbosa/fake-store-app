@@ -7,7 +7,14 @@ interface ProductState {
 
 const initialState = {
   savedProducts: [],
-  product: { id: '', title: '', category: '' },
+  product: {
+    id: '',
+    title: '',
+    category: '',
+    image: '',
+    description: '',
+    price: '',
+  },
 } as ProductState
 
 export default initialState
