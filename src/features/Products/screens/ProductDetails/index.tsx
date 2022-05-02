@@ -19,12 +19,11 @@ const ProductDetails: FC = () => {
 
   useEffect(() => {
     loadProduct(params?.id!)
-  }, [])
 
-  const handleGoBack = () => {
-    goBack()
-    clearProduct()
-  }
+    return () => {
+      clearProduct()
+    }
+  }, [])
 
   const handlePressCartActions = () => {
     productsOnCart.map((item) => item.id).includes(product.id)
@@ -37,27 +36,29 @@ const ProductDetails: FC = () => {
       {!product.id ? (
         <ActivityIndicator size={40} />
       ) : (
-        <ContentSection productInfo={product} />
+        <>
+          <ContentSection productInfo={product} />
+
+          <Container
+            minHeight={50}
+            maxHeight={100}
+            justifyContent={'space-between'}
+            alignItems={'center'}
+          >
+            <TouchableOpacity onPress={handlePressCartActions}>
+              <Typography>
+                {productsOnCart.map((item) => item.id).includes(product.id)
+                  ? 'Remove from cart'
+                  : 'Add to cart'}
+              </Typography>
+            </TouchableOpacity>
+
+            <TouchableOpacity onPress={goBack}>
+              <Typography>Back to list</Typography>
+            </TouchableOpacity>
+          </Container>
+        </>
       )}
-
-      <Container
-        minHeight={50}
-        maxHeight={100}
-        justifyContent={'space-between'}
-        alignItems={'center'}
-      >
-        <TouchableOpacity onPress={handlePressCartActions}>
-          <Typography>
-            {productsOnCart.map((item) => item.id).includes(product.id)
-              ? 'Remove from cart'
-              : 'Add to cart'}
-          </Typography>
-        </TouchableOpacity>
-
-        <TouchableOpacity onPress={handleGoBack}>
-          <Typography>Back to list</Typography>
-        </TouchableOpacity>
-      </Container>
     </Container>
   )
 }
