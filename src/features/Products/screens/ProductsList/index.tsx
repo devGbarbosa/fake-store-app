@@ -21,7 +21,12 @@ const ProductsList: FC = () => {
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
-      <Container flex={1} justifyContent={'center'} alignItems={'center'}>
+      <Container
+        flex={1}
+        justifyContent={'center'}
+        alignItems={'center'}
+        py={2}
+      >
         <List savedProducts={savedProducts} viewProduct={viewProduct} />
       </Container>
     </SafeAreaView>
