@@ -6,7 +6,7 @@ import Typography from '../../../../Layout/Typography'
 import { useStoreData as useCartStoreData } from '../../../Cart/screens/CartItems/useStoreData'
 import ContentSection from '../../components/ContentSection'
 import { ProductNavigatorParamList } from '../../ProductNavigator'
-import { useStoreData as useProductStoreData } from './useStoreData'
+import { useStoreData as useProductStoreData } from '../useStoreData'
 
 const ProductDetails: FC = () => {
   const { loadProduct, product, clearProduct } = useProductStoreData()

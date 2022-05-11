@@ -4,12 +4,14 @@ import React, { FC, useEffect } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import Container from '../../../../Layout/Container'
 import List from '../../components/List'
-import useStoreData from './useStoreData'
+import { ProductNavigatorParamList } from '../../ProductNavigator'
+import { useStoreData } from '../useStoreData'
 
 const ProductsList: FC = () => {
   const { loadProducts, savedProducts } = useStoreData()
 
-  const { navigate } = useNavigation<NativeStackNavigationProp<any>>()
+  const { navigate } =
+    useNavigation<NativeStackNavigationProp<ProductNavigatorParamList>>()
 
   const viewProduct = (id: string) => {
     navigate('ProductsDetails', { id })

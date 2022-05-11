@@ -18,3 +18,10 @@ export const loadProductThunk = createAsyncThunk<void, string>(
     dispatch(saveProduct({ product }))
   },
 )
+
+export const submitProductThunk = createAsyncThunk<void, ProductBody>(
+  'products/savedProducts',
+  async (product, { dispatch }) => {
+    dispatch(saveProduct({ product }))
+  },
+)
