@@ -1,0 +1,6 @@
+{
+  "generator-rn-toolbox": {
+    "circleci-ready": true,
+    "fastlane": true
+  }
+}

@@ -7,7 +7,10 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "pack-secrets": "./secrets-scripts/pack-secrets.sh",
+    "unpack-secrets": "./secrets-scripts/unpack-secrets.sh",
+    "deploy": "./deploy.sh"
   },
   "dependencies": {
     "@react-navigation/bottom-tabs": "^6.3.1",

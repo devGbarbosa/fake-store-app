@@ -106,6 +106,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		7AD5B8C7E2D345FBA395BA73 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Resources;
+			path = "";
+			sourceTree = "<group>";
+		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
@@ -148,14 +156,6 @@
 			);
 			path = Pods;
 			sourceTree = "<group>";
-		};
-		7AD5B8C7E2D345FBA395BA73 /* Resources */ = {
-			isa = "PBXGroup";
-			children = (
-			);
-			name = Resources;
-			sourceTree = "<group>";
-			path = "";
 		};
 /* End PBXGroup section */
 
@@ -215,6 +215,9 @@
 						CreatedOnToolsVersion = 6.2;
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
+          13B07F861A680F5B00A75B9A = {
+            ProvisioningStyle = Manual;
+          };
 					13B07F861A680F5B00A75B9A = {
 						LastSwiftMigration = 1120;
 					};
