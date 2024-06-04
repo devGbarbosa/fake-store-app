@@ -1,14 +1,13 @@
 import React, { FC } from 'react'
 import ProductNavigator, {
   ProductNavigatorParamList,
-} from '../features/Products/ProductNavigator'
+} from '../modules/Products/ProductNavigator'
 import CartNavigator, {
   CartNavigatorParamList,
-} from '../features/Cart/CartNavigator'
+} from '../modules/Cart/CartNavigator'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import { Platform, TouchableOpacity } from 'react-native'
-import Typography from '../Layout/Typography'
 
 export type TabNavigatorParamList = {
   Products: ProductNavigatorParamList

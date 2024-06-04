@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux'
 import { useDispatch } from 'react-redux'
-import { RootState } from '../../redux-store/rootReducer'
+import { RootState } from '../../reduxStore/rootReducer'
 import { onLogout, signIn } from '../store/slice/authSlice'
 
 interface Data {

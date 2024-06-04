@@ -3,7 +3,7 @@ interface AuthState {
 }
 
 const initialState = {
-  userToken: '',
+  userToken: 'Test',
 } as AuthState
 
 export default initialState

@@ -1,6 +1,6 @@
 import styled from 'styled-components/native'
 import {
-    typography,
+  typography,
   TypographyProps
 } from 'styled-system'
 
